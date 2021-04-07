@@ -22,17 +22,24 @@ int main(){
     char **tablaMarcos;
 
     while(op != 4){
-
-        cout << "Eliga el Algoritmo de Paginación que desea usar:\n" <<
+        while(op > 4 || op < 1){
+            cout << "Eliga el Algoritmo de Paginación que desea usar:\n" <<
                 "1. FIFO\n"
                 "2. LRU\n"
                 "3. NRU\n"
                 "4. Salir\n"
                 "Ingrese el numero: ";
-        cin >> op;
+            cin >> op;
 
-        if(op == 4){break;}
+            if(op == 4){ break;}
+            if (op > 4 || op < 1) {
+                system("cls");
+                cout << "\n\n\t\t=================== NO HA INGRESADO UNA OPCION VALIDA =================== \n\n";
+            }
+        }
 
+        if (op == 4) { break; }
+        
         cout << "\nAhora ingrese los MARCOS de Página que desea tener: ";
         cin >> cantmarcos;
         auxmarcos = new int[cantmarcos];
@@ -58,7 +65,7 @@ int main(){
 
         int menor = 0;
 
-        switch (op){
+        switch(op){
             case 1:
                 cout << "========================== FIFO ==========================";
                 cout << "\nTiempo: \t";
@@ -255,6 +262,7 @@ int main(){
             break;
         }
 
+        op = 0;
         system("pause");
         system("cls");
     }
