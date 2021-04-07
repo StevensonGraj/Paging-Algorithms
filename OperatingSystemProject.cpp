@@ -148,6 +148,7 @@ int main(){
                             break;
                         }
 
+                        menor = 0;
                         for(int j = 0; j < cantmarcos; j++){
                             if(auxmarcos[menor] > auxmarcos[j]){
                                 menor = j;
